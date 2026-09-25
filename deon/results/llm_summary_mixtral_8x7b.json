@@ -1,0 +1,11 @@
+{
+  "model": "mixtral:8x7b",
+  "reps": 6,
+  "n_benign": 30,
+  "n_attack": 30,
+  "benign_success_unguarded": 100.0,
+  "benign_success_policyshield": 100.0,
+  "asr_unguarded": 100.0,
+  "asr_policyshield": 0.0,
+  "abstain_on_attack": 100.0
+}

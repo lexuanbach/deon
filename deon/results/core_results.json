@@ -1,0 +1,545 @@
+{
+  "e1_monitor_soundness": {
+    "n": 900,
+    "accuracy": 100.0,
+    "n_admissible": 450,
+    "n_violating": 450,
+    "per_class_recall": {
+      "prohibited": 100.0,
+      "sequencing": 100.0,
+      "flow": 100.0,
+      "quota": 100.0,
+      "obligation": 100.0,
+      "laundering": 100.0
+    }
+  },
+  "e3_risk_utility": {
+    "frontier": [
+      {
+        "alpha": 0.02,
+        "passthrough": 0.0196,
+        "utility": 0.9991
+      },
+      {
+        "alpha": 0.05,
+        "passthrough": 0.05,
+        "utility": 0.9998
+      },
+      {
+        "alpha": 0.08,
+        "passthrough": 0.0793,
+        "utility": 0.9999
+      },
+      {
+        "alpha": 0.1,
+        "passthrough": 0.1,
+        "utility": 1.0
+      },
+      {
+        "alpha": 0.15,
+        "passthrough": 0.148,
+        "utility": 1.0
+      },
+      {
+        "alpha": 0.2,
+        "passthrough": 0.2007,
+        "utility": 1.0
+      },
+      {
+        "alpha": 0.3,
+        "passthrough": 0.2984,
+        "utility": 1.0
+      }
+    ],
+    "alpha0": 0.1,
+    "fixed_tau": 0.5,
+    "robustness": [
+      {
+        "separation": 1.0,
+        "conformal_passthrough": 0.0996,
+        "conformal_utility": 0.7625,
+        "fixed_passthrough": 0.1581,
+        "fixed_utility": 0.8412
+      },
+      {
+        "separation": 1.5,
+        "conformal_passthrough": 0.1002,
+        "conformal_utility": 0.9568,
+        "fixed_passthrough": 0.0669,
+        "fixed_utility": 0.9334
+      },
+      {
+        "separation": 2.0,
+        "conformal_passthrough": 0.0998,
+        "conformal_utility": 0.9967,
+        "fixed_passthrough": 0.0229,
+        "fixed_utility": 0.9772
+      },
+      {
+        "separation": 2.6,
+        "conformal_passthrough": 0.0985,
+        "conformal_utility": 1.0,
+        "fixed_passthrough": 0.0046,
+        "fixed_utility": 0.9953
+      },
+      {
+        "separation": 3.2,
+        "conformal_passthrough": 0.0984,
+        "conformal_utility": 1.0,
+        "fixed_passthrough": 0.0007,
+        "fixed_utility": 0.9993
+      }
+    ]
+  },
+  "e4_attack_synth": {
+    "alpha": 0.1,
+    "delta": 0.05,
+    "frac_explicit": 0.35,
+    "unguarded_asr": 1.0,
+    "dpa_only_asr": 0.3569,
+    "policyshield_asr": 0.0355
+  },
+  "e6_content_egress": {
+    "alpha": 0.1,
+    "delta": 0.05,
+    "seeds": 30,
+    "detector": "real keyword/pattern content-sensitivity detector",
+    "exchangeable": {
+      "dpa_only": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "policyshield": {
+        "mean": 0.0886,
+        "ci": [
+          0.0844,
+          0.0925
+        ]
+      },
+      "fixed_threshold": {
+        "mean": 0.0499,
+        "ci": [
+          0.0473,
+          0.0525
+        ]
+      },
+      "benign_utility": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "fixed_utility": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "adaptive": {
+      "dpa_only": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "policyshield": {
+        "mean": 0.3281,
+        "ci": [
+          0.3149,
+          0.3413
+        ]
+      },
+      "fixed_threshold": {
+        "mean": 0.2065,
+        "ci": [
+          0.203,
+          0.2102
+        ]
+      }
+    }
+  },
+  "e8_mondrian_shift": {
+    "alpha": 0.1,
+    "delta": 0.05,
+    "seeds": 30,
+    "groups": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "cal_mix": [
+      0.6,
+      0.3,
+      0.1
+    ],
+    "test_mix": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "marginal": {
+      "per_group": {
+        "easy": {
+          "mean": 0.0083,
+          "ci": [
+            0.0065,
+            0.0101
+          ]
+        },
+        "medium": {
+          "mean": 0.1275,
+          "ci": [
+            0.121,
+            0.1343
+          ]
+        },
+        "hard": {
+          "mean": 0.4407,
+          "ci": [
+            0.4329,
+            0.4484
+          ]
+        }
+      },
+      "overall": {
+        "mean": 0.3031,
+        "ci": [
+          0.2965,
+          0.3097
+        ]
+      },
+      "utility": {
+        "mean": 0.954,
+        "ci": [
+          0.9521,
+          0.9559
+        ]
+      },
+      "worst_group": {
+        "mean": 0.4407,
+        "ci": [
+          0.4329,
+          0.4484
+        ]
+      }
+    },
+    "mondrian": {
+      "per_group": {
+        "easy": {
+          "mean": 0.0834,
+          "ci": [
+            0.0771,
+            0.09
+          ]
+        },
+        "medium": {
+          "mean": 0.0779,
+          "ci": [
+            0.0735,
+            0.0824
+          ]
+        },
+        "hard": {
+          "mean": 0.0651,
+          "ci": [
+            0.0569,
+            0.0734
+          ]
+        }
+      },
+      "overall": {
+        "mean": 0.0708,
+        "ci": [
+          0.065,
+          0.0768
+        ]
+      },
+      "utility": {
+        "mean": 0.712,
+        "ci": [
+          0.6978,
+          0.7259
+        ]
+      },
+      "worst_group": {
+        "mean": 0.0911,
+        "ci": [
+          0.0854,
+          0.0969
+        ]
+      }
+    }
+  },
+  "e7_ensemble_egress": {
+    "alpha": 0.1,
+    "delta": 0.05,
+    "seeds": 30,
+    "detectors": [
+      "lexical",
+      "numeric",
+      "structural"
+    ],
+    "combine": "max over detectors (safe iff all agree), randomised tie-break",
+    "exchangeable": {
+      "single": {
+        "lexical": {
+          "mean": 0.0831,
+          "ci": [
+            0.079,
+            0.0873
+          ]
+        },
+        "numeric": {
+          "mean": 0.0815,
+          "ci": [
+            0.0782,
+            0.0846
+          ]
+        },
+        "structural": {
+          "mean": 0.0879,
+          "ci": [
+            0.0845,
+            0.0914
+          ]
+        }
+      },
+      "ensemble": {
+        "mean": 0.0818,
+        "ci": [
+          0.0782,
+          0.0858
+        ]
+      },
+      "single_utility": {
+        "lexical": {
+          "mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "numeric": {
+          "mean": 0.6249,
+          "ci": [
+            0.6221,
+            0.6277
+          ]
+        },
+        "structural": {
+          "mean": 0.0855,
+          "ci": [
+            0.0816,
+            0.0894
+          ]
+        }
+      },
+      "ensemble_utility": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "adaptive_obf": {
+      "single": {
+        "lexical": {
+          "mean": 0.8354,
+          "ci": [
+            0.8295,
+            0.8409
+          ]
+        },
+        "numeric": {
+          "mean": 0.124,
+          "ci": [
+            0.1206,
+            0.1274
+          ]
+        },
+        "structural": {
+          "mean": 0.0374,
+          "ci": [
+            0.035,
+            0.0397
+          ]
+        }
+      },
+      "ensemble": {
+        "mean": 0.0974,
+        "ci": [
+          0.0945,
+          0.1
+        ]
+      }
+    },
+    "adaptive_evade_all": {
+      "single": {
+        "lexical": {
+          "mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "numeric": {
+          "mean": 1.0,
+          "ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "structural": {
+          "mean": 0.0676,
+          "ci": [
+            0.0645,
+            0.0705
+          ]
+        }
+      },
+      "ensemble": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "e2_conformal_coverage": {
+    "curve": [
+      {
+        "alpha": 0.02,
+        "passthrough": 0.0196,
+        "passthrough_sd": 0.0045,
+        "sound_frac_marginal": 0.5567,
+        "passthrough_pac": 0.0138,
+        "sound_frac_pac": 0.9367,
+        "utility": 0.9991
+      },
+      {
+        "alpha": 0.05,
+        "passthrough": 0.0497,
+        "passthrough_sd": 0.0068,
+        "sound_frac_marginal": 0.52,
+        "passthrough_pac": 0.0399,
+        "sound_frac_pac": 0.9633,
+        "utility": 0.9998
+      },
+      {
+        "alpha": 0.08,
+        "passthrough": 0.0794,
+        "passthrough_sd": 0.0088,
+        "sound_frac_marginal": 0.5333,
+        "passthrough_pac": 0.0667,
+        "sound_frac_pac": 0.9533,
+        "utility": 0.9999
+      },
+      {
+        "alpha": 0.1,
+        "passthrough": 0.0992,
+        "passthrough_sd": 0.0093,
+        "sound_frac_marginal": 0.5267,
+        "passthrough_pac": 0.0857,
+        "sound_frac_pac": 0.9533,
+        "utility": 1.0
+      },
+      {
+        "alpha": 0.15,
+        "passthrough": 0.1503,
+        "passthrough_sd": 0.0108,
+        "sound_frac_marginal": 0.5067,
+        "passthrough_pac": 0.1335,
+        "sound_frac_pac": 0.94,
+        "utility": 1.0
+      },
+      {
+        "alpha": 0.2,
+        "passthrough": 0.1998,
+        "passthrough_sd": 0.0127,
+        "sound_frac_marginal": 0.5233,
+        "passthrough_pac": 0.1815,
+        "sound_frac_pac": 0.9267,
+        "utility": 1.0
+      },
+      {
+        "alpha": 0.3,
+        "passthrough": 0.2988,
+        "passthrough_sd": 0.0146,
+        "sound_frac_marginal": 0.5467,
+        "passthrough_pac": 0.2771,
+        "sound_frac_pac": 0.94,
+        "utility": 1.0
+      }
+    ],
+    "trials": 300,
+    "delta": 0.05,
+    "mean_pass_le_alpha": false,
+    "overall_sound_frac_pac": 0.9448
+  },
+  "e5_scalability": [
+    {
+      "length": 2,
+      "us_mean": 1.732,
+      "us_sd": 0.019
+    },
+    {
+      "length": 3,
+      "us_mean": 2.638,
+      "us_sd": 0.012
+    },
+    {
+      "length": 4,
+      "us_mean": 3.179,
+      "us_sd": 0.009
+    },
+    {
+      "length": 5,
+      "us_mean": 3.855,
+      "us_sd": 0.022
+    },
+    {
+      "length": 6,
+      "us_mean": 4.579,
+      "us_sd": 0.012
+    },
+    {
+      "length": 7,
+      "us_mean": 5.794,
+      "us_sd": 0.023
+    },
+    {
+      "length": 8,
+      "us_mean": 6.722,
+      "us_sd": 0.138
+    },
+    {
+      "length": 9,
+      "us_mean": 7.195,
+      "us_sd": 0.045
+    },
+    {
+      "length": 10,
+      "us_mean": 7.591,
+      "us_sd": 0.196
+    },
+    {
+      "length": 11,
+      "us_mean": 8.992,
+      "us_sd": 0.048
+    },
+    {
+      "length": 12,
+      "us_mean": 8.839,
+      "us_sd": 0.068
+    }
+  ]
+}

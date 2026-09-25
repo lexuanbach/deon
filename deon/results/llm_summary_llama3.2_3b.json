@@ -1,0 +1,11 @@
+{
+  "model": "llama3.2:3b",
+  "reps": 6,
+  "n_benign": 30,
+  "n_attack": 30,
+  "benign_success_unguarded": 96.7,
+  "benign_success_policyshield": 100.0,
+  "asr_unguarded": 100.0,
+  "asr_policyshield": 0.0,
+  "abstain_on_attack": 100.0
+}

@@ -1,0 +1,9 @@
+# Deon / PolicyShield artifact -- Python dependencies.
+# The model-free experiments (RQ1 to RQ6, apart from the LLM ladder and AgentDojo)
+# and the figures need only the three packages below. Tested versions are pinned in
+# requirements-lock.txt at the top of the artifact.
+numpy>=1.24
+scipy>=1.10          # exact binomial-tail PAC rank (scipy.stats.binom)
+matplotlib>=3.7      # make_real_figures.py
+# The RQ2 proposer ladder also needs a local Ollama server (see README.md). It is not
+# needed for check_results.py or the smoke test.
